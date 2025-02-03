@@ -48,7 +48,7 @@ Math.max.apply(null, numbers); // Returns 7
 
 /*
 Key Differences Table
-Method	Invocation Time	Arguments Format	Best For
+Method	Invocation Time	Arguments Format Best For
 bind()	Later execution	Individual args	Event handlers, callbacks
 call()	Immediately	Individual args	Method borrowing, composition
 apply()	Immediately	Array of args	Array-like data, variadic fns
