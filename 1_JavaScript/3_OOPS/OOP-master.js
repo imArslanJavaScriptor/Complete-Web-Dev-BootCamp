@@ -152,7 +152,6 @@ let calculationOne = new Calculator()
 // console.log(calculationOne.sub(34, 20))
 
 // Getters & Setters
-
 class Employee {
   #salary; // private property
 
