@@ -69,9 +69,10 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
-.delete  {
+.delete {
   background-color: #ff3b3b;
   border: none;
   padding: 6px 10px;
@@ -85,3 +86,7 @@ li button:hover {
   background-color: #e60000;
 }
 
+li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
