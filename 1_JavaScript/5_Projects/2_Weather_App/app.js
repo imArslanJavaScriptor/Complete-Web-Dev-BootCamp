@@ -13,9 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1️⃣ Auto-load saved city on page load
   const savedCity = localStorage.getItem("lastCity");
   if (savedCity) {
-    fetchWeatherData(savedCity)
-      .then(displayWeatherData)
-      .catch(showError);
+    fetchWeatherData(savedCity).then(displayWeatherData).catch(showError);
   }
 
   // 2️⃣ Handle search click
@@ -27,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const weatherData = await fetchWeatherData(city);
       displayWeatherData(weatherData);
       errorMessage.classList.add("hidden");
+      cityInput.value = ""; // Clear input field
 
       // Save to local storage
       localStorage.setItem("lastCity", city);
@@ -56,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cityNameDisplay.textContent = name;
     temperatureDisplay.textContent = `${temperature}°C`;
-    descriptionDisplay.textContent = description.charAt(0).toUpperCase() + description.slice(1);
+    descriptionDisplay.textContent =
+      description.charAt(0).toUpperCase() + description.slice(1);
     weatherIcon.src = iconUrl;
     weatherIcon.alt = description;
   }
