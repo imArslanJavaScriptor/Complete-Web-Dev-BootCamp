@@ -3,7 +3,6 @@
 // 2- Reference Data Type
 
 //Primitves:
-
 // 1- Null
 // 2- Number
 // 3- String

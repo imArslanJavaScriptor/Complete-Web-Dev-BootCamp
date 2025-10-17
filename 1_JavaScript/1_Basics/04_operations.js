@@ -11,6 +11,7 @@ let reminder = 9 % 2
 let exponenet = 2 ** 8
 
 
+// Printing 
 console.log(addition)
 console.log(multiplication)
 console.log(division)
@@ -18,11 +19,13 @@ console.log(reminder)
 console.log(exponenet)
 
 // Increment
-console.log("Scroe", ++score)
-console.log("Scroe", score++)
+console.log("Score", ++score)
+console.log("Score", score++)
+
 // Decrement
-console.log("Scroe", --score)
-console.log("Scroe", score--)
+console.log("Score", --score)
+console.log("Score", score--)
+console.log("Expected Score: 1200", score)
 
 // Comparison Operator
 let num1 = 10
