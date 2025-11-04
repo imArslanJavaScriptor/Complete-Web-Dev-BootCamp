@@ -35,9 +35,21 @@ let totalCost = calculateTotal(400, 5)
 function makeTea(teaType) {
     return teaType
 }
-function processTeaOrder(makeTea) {
-    return makeTea("Earl Grey")
+function processTeaOrder(teaFunction) {
+    return teaFunction("Earl Grey")
 }
 
 let res = processTeaOrder(makeTea)
-console.log(res)
+// console.log(res)
+
+//  Exercise 5:
+function teaMaker(teaType) {
+    return `Making ${teaType}`
+}
+
+function createTeaMaker (teaFunction) {
+    return teaFunction
+}
+
+let teaMakerCall = createTeaMaker(teaMaker("Green Tea"))
+console.log(teaMakerCall)
