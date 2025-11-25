@@ -23,7 +23,7 @@ if (
   haveGoodAttitude &&
   behaviourWithTeachers === "Good"
 ) {
-  console.log("He is a Good Student Self Made and Respectful");
+  console.log("He is a Good Student");
 } else {
   console.log("He is not a Good Student");
 }

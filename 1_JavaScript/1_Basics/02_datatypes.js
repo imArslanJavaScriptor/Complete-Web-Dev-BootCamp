@@ -6,7 +6,7 @@
 // 1- Null
 // 2- Number
 // 3- String
-// 4- Symbol
+// 4- Symbol 
 // 5- Boolean
 // 6- BigInt
 // 7- Undefined
@@ -16,7 +16,3 @@
 // 1- Objects
 // 2- Arrays
 // 3- Functions
-
-
-
-

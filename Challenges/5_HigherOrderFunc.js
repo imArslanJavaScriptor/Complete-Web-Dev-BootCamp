@@ -24,7 +24,7 @@ const nameArr = [
 {name: "Arslan", age: 20},
 {name: "Hammad", age: 20},
 {name: "Mustafa", age: 20},
-{name: "Gugo", age: 20}
+{name: "Gugu", age: 4}
 ]
 
 console.log(getNames(nameArr))
