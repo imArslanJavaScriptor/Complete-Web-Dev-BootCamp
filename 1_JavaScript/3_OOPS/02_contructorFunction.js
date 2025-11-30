@@ -38,7 +38,7 @@ let cat = new Animal("cat");
 // console.log(cat.sound());
 
 function Drink(name) {
-  if (!new.target) {
+  if (!new.target) { // !new.target to check whether user used the new keyword or not
     throw new Error("Drink must be called with new keyword");
   }
   this.name = name;
