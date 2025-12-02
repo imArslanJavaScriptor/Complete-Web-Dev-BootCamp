@@ -1,6 +1,6 @@
 function fetchPostData() {
   return new Promise((resolve) => {
-    setTimeout(() => {
+    setTimeout(() => { 
       resolve("Post Data fetched");
     }, 2000);
   });
