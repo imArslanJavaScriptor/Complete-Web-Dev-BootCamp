@@ -1,62 +1,44 @@
-const fs = require("fs")
-const filePath = "./tasks.json"
-
-const command = process.argv[2]
-const argument = process.argv[3]
+const fs = require("fs");
+const filePath = "./tasks.json";
 
 const loadTasks = () => {
-    try {
-        const dataBuffer = fs.readFileSync(filePath)
-        return JSON.parse(dataBuffer.toString())
-    } catch (error) {
-        return []
-    }
-}
+  try {
+    const dataBuffer = fs.readFileSync(filePath);
+    const dataJSON = dataBuffer.toString();
+    return JSON.parse(dataJSON);
+  } catch (error) {
+    return [];
+  }
+};
 
 const saveTasks = (tasks) => {
-    fs.writeFileSync(filePath, JSON.stringify(tasks, null, 2)) // formatted JSON
-}
+  const dataJSON = JSON.stringify(tasks);
+  fs.writeFileSync(filePath, dataJSON);
+};
 
-const addTask = (taskName) => {
-    const tasks = loadTasks()
-    tasks.push({ id: Date.now(), name: taskName })
-    saveTasks(tasks)
-    console.log("✅ Task Added:", taskName)
-}
+const addTask = (task) => {
+  const tasks = loadTasks();
+  tasks.push({ task });
+  saveTasks(tasks);
+  console.log("Task added", task);
+};
 
 const listTasks = () => {
-    const tasks = loadTasks()
-    if (tasks.length === 0) {
-        console.log("📭 No tasks found.")
-    } else {
-        tasks.forEach((task, index) => {
-            console.log(`${index + 1}. ${task.name}`)
-        })
-    }
-}
+  const tasks = loadTasks();
+  tasks.forEach((task, index) => console.log(`${index + 1} - ${task.task}`));
+};
 
-const removeTask = (taskIndex) => {
-    const tasks = loadTasks()
-    if (taskIndex < 1 || taskIndex > tasks.length) {
-        console.log("❌ Invalid task index.")
-        return
-    }
-    const removed = tasks.splice(taskIndex - 1, 1)
-    saveTasks(tasks)
-    console.log(`🗑️ Task Removed: ${removed[0].name}`)
-}
+// TODO: Remove task by index
 
-switch (command) {
-    case "add":
-        addTask(argument)
-        break
-    case "list":
-        listTasks()
-        break
-    case "remove":
-        removeTask(parseInt(argument))
-        break
-    default:
-        console.log("❓ Unknown command.")
-        console.log("Usage: node app.js [add|list|remove] [task or index]")
+const command = process.argv[2];
+const argument = process.argv[3];
+
+if (command === "add") {
+  addTask(argument);
+} else if (command === "list") {
+  listTasks();
+} else if (command === "remove") {
+  removeTask(parseInt(argument));
+} else {
+  console.log("Command not found!");
 }
