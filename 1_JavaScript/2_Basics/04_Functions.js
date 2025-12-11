@@ -1,5 +1,5 @@
 //  Exercise 1:
-function makeTea (typeOfTea) {
+function makeTea(typeOfTea) {
     return `Making ${typeOfTea}`
 }
 let teaOrder = makeTea("Green Tea")
@@ -9,32 +9,32 @@ function orderTea(teaType) {
     function confirmOrder() {
         return `Order Confirmed for ${teaType}`
     }
-    return confirmOrder()
+    return confirmOrder
 }
-let orderComfirmation = orderTea("Chai")
-// console.log(orderComfirmation)
 
+let orderComfirmation = orderTea("Herbel Tea")
+
+// Sample of Function returning Array
 function giveMe() {
     let arr =  [1,2,3,4,5,6,7,8]
-    // console.log(arr)
     return arr
 }
 
 // giveMe()
 // .map((item) => console.log(item))
-// console.log(orderTea("Lemon Tea"))
 
 //  Exercise 3:
 let calculateTotal = (price, quantity) => {
-    return Number(price * quantity)
+    let calc = Number(price * quantity)
+    return calc
 }
-let totalCost = calculateTotal(400, 5)
-// console.log(totalCost)
+let totalCost = calculateTotal(100, 5)
 
 //  Exercise 4:
 function makeTea(teaType) {
     return teaType
 }
+
 function processTeaOrder(teaFunction) { 
     return teaFunction("Earl Grey")
 } 
@@ -86,7 +86,7 @@ let makeBurgerCall = createBurger
 
 // Hoisting Difference (var ✅ vs let/const ❌)
 a = "Arslan"
-console.log(a) // ✅ works print Arslan in the console)
+// console.log(a) // ✅ works print Arslan in the console)
 // console.log(b) // ❌ Error (cannot access before initialization)
 // console.log(c) // ❌ Error
 
@@ -108,10 +108,10 @@ function outer() {
 
 let counter = outer()
 
-console.log(counter()) // 1
-console.log(counter()) // 2
-console.log(counter()) // 3
-console.log(counter()) // 4
+// console.log(counter()) // 1
+// console.log(counter()) // 2
+// console.log(counter()) // 3
+// console.log(counter()) // 4
 
 function findMax(arr) {
     if(typeof arr !== "object" || arr.length === 0) {
@@ -120,8 +120,8 @@ function findMax(arr) {
     return Math.max(...arr);
 }
 
-console.log(findMax([1,2,3,4,5,6,7,89,10]))
-console.log(findMax("String Input"))
+// console.log(findMax([1,2,3,4,5,6,7,89,10]))
+// console.log(findMax("String Input"))
 
 
 function removeDuplicates(arr) {
@@ -129,4 +129,4 @@ function removeDuplicates(arr) {
     // return [new Set(arr)];
 }
 
-removeDuplicates([1,2,2,3,4,4,5,5,6,7,8,8,9]).map((item) => console.log("Item:", item))
+// removeDuplicates([1,2,2,3,4,4,5,5,6,7,8,8,9]).map((item) => console.log("Item:", item))

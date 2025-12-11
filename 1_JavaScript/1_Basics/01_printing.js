@@ -8,4 +8,3 @@ console.table({
     myAge: 20,
     myJob: "Developer"
 })
-console.log('Arslan');
